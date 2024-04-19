@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    // 取消以下的检查
+    "types": ["element-plus/global", "node"],
+    "baseUrl": ".",
+  },
+  "include": ["vite.config.ts"]
+}
