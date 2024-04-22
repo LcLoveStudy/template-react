@@ -10,7 +10,7 @@
       "@/*": ["./src/*"]
     },
     // 取消以下的检查
-    "types": ["element-plus/global", "node"],
+    "types": ["node"],
     "baseUrl": ".",
   },
   "include": ["vite.config.ts"]
