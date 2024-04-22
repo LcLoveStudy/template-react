@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import tailwindcss from "tailwindcss";
 import autoprefixer from "autoprefixer";
-import { fileURLToPath } from "url";
 // https://vitejs.dev/config/
 export default defineConfig({
   esbuild: {
@@ -14,12 +13,6 @@ export default defineConfig({
   css: {
     postcss: {
       plugins: [tailwindcss, autoprefixer],
-    },
-  },
-  resolve: {
-    // 配置别名
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
   server: {

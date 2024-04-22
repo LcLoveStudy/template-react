@@ -8,10 +8,7 @@
     "strict": true,
     // 取消以下的检查
     "types": ["node"],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "baseUrl": "."
   },
   "include": ["vite.config.ts"]
 }
