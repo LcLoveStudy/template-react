@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { DeleteOutlined } from "@ant-design/icons";
-import { Card, Input, Button, Checkbox } from "antd";
+import { TodoHeader, TodoShow } from "./components";
+import { Card } from "antd";
 import { CheckboxChangeEvent } from "antd/es/checkbox";
 function TodoList() {
   // 输入框值
@@ -57,6 +57,7 @@ function TodoList() {
   /** 删除todo */
   const delTodoItemHandler = (id: number) => {
     setTodoList(todoList.filter((todo) => todo.id !== id));
+    setShowTodoList(showTodoList.filter((todo) => todo.id !== id));
   };
 
   return (
@@ -65,51 +66,20 @@ function TodoList() {
         className="w-[40rem] mx-auto mt-[5rem]"
         hoverable
         title={
-          <div className="flex justify-between items-center">
-            {/* 输入框 */}
-            <Input
-              value={searchValue}
-              placeholder="输入待办事项"
-              onChange={(e) => {
-                searchValueChangeHandler(e.target.value);
-              }}
-            />
-            <Button
-              type="primary"
-              onClick={addTodoHandler}
-              style={{ marginLeft: "20px" }}
-            >
-              添加
-            </Button>
-          </div>
+          <TodoHeader
+            searchValue={searchValue}
+            searchValueChangeHandler={searchValueChangeHandler}
+            addTodoHandler={addTodoHandler}
+          />
         }
       >
         {/* 待办列表 */}
         <div className="h-[30rem] overflow-y-auto pr-5">
-          {showTodoList.map((todoItem) => {
-            return (
-              <div
-                key={todoItem.id}
-                className="p-5 border-[1px] border-solid border-[#ccc] rounded flex justify-between items-center"
-              >
-                <Checkbox
-                  checked={todoItem.status}
-                  onChange={(e) => {
-                    todoItemStatusChangeHandler(e, todoItem.id);
-                  }}
-                >
-                  {todoItem.content}
-                </Checkbox>
-                <Button
-                  onClick={() => delTodoItemHandler(todoItem.id)}
-                  type="primary"
-                  danger
-                  shape="circle"
-                  icon={<DeleteOutlined />}
-                />
-              </div>
-            );
-          })}
+          <TodoShow
+            showTodoList={showTodoList}
+            todoItemStatusChangeHandler={todoItemStatusChangeHandler}
+            delTodoItemHandler={delTodoItemHandler}
+          />
         </div>
       </Card>
     </>
