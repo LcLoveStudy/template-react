@@ -15,7 +15,7 @@ const LayoutDom = () => {
           className="h-full"
           theme="light"
         >
-          <div>Sider</div>
+          <div>侧边</div>
         </Sider>
         <Layout>
           <Header className="bg-white">
