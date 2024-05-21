@@ -1,4 +1,5 @@
 declare type MenuItemType = {
+  order?: number //菜单项的排序
   name: string //菜单项的名称
   path: string //菜单项的路径
   icon?: string //菜单项的图标
