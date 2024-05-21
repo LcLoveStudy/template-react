@@ -26,7 +26,7 @@ function TodoList() {
 
   /** 添加待办事项 */
   const addTodoHandler = () => {
-    let newTodoList = [
+    const newTodoList = [
       ...todoList,
       {
         id: Math.random(),
