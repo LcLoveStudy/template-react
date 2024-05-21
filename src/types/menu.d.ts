@@ -1,4 +1,4 @@
-export type MenuItemType = {
+declare type MenuItemType = {
   // 菜单项的名称
   name: string
   // 菜单项的路径

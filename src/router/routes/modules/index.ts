@@ -1,5 +1,3 @@
-import { MenuItemType } from '../../../types/menu'
-
 // import.meta.glob() 直接引入所有的模块 Vite 独有的功能
 const modules = import.meta.glob('./**/index.tsx', { eager: true })
 /** routes为所有菜单栏内的所有路由 */
