@@ -1,8 +1,9 @@
 import { Button, Checkbox } from 'antd'
 import { DeleteOutlined } from '@ant-design/icons'
+import { CheckboxChangeEvent } from 'antd/es/checkbox'
 const TodoShow = (props: {
   showTodoList: { id: number; content: string; status: boolean }[]
-  todoItemStatusChangeHandler: (e: any, id: number) => void
+  todoItemStatusChangeHandler: (e: CheckboxChangeEvent, id: number) => void
   delTodoItemHandler: (id: number) => void
 }) => {
   const { showTodoList, todoItemStatusChangeHandler, delTodoItemHandler } = props
