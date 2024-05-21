@@ -8,7 +8,8 @@ const HeaderComp = (props: {
   const { collapseChange, collapsed } = props;
   return (
     <div className="h-full flex items-center justify-between">
-      {collapsed ? (
+      <div className="ml-[-2rem]">
+      {!collapsed ? (
         <MenuFoldOutlined
           style={{ fontSize: "1.5rem" }}
           onClick={collapseChange}
@@ -19,6 +20,7 @@ const HeaderComp = (props: {
           onClick={collapseChange}
         />
       )}
+      </div>
       <Button type="primary">退出登录</Button>
     </div>
   );
