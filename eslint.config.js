@@ -39,6 +39,7 @@ export default [
       'no-undef-init': 'error', // 不允许将变量初始化为 undefined
       'no-useless-return': 'error', // 不允许多余的返回语句
       'no-var': 'error', // 需要 let 或 const 而不是 var
+      'prefer-const': 'off', //未重新定义的变量用const
       'require-await': 'off' // 没有await时禁止使用async
     }
   }

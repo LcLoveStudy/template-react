@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint . --fix --ignore-pattern .gitignore",
+    "lint": "eslint . --ignore-pattern .gitignore",
     "format": "prettier --write src/",
     "prepare": "husky install"
   },
@@ -40,7 +40,7 @@
   "lint-staged": {
     "**/*.{js,jsx,tsx,ts,less}": [
       "prettier --write",
-      "eslint --fix"
+      "eslint"
     ]
   }
 }
