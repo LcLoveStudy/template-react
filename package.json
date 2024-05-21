@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint": "eslint . --ignore-pattern .gitignore",
     "format": "prettier --write src/",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "preinstall": "node ./preinstall.js"
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.6",
@@ -38,7 +39,7 @@
     "vite": "^5.2.0"
   },
   "lint-staged": {
-    "**/*.{js,jsx,tsx,ts,less}": [
+    "src/**/*.{js,jsx,tsx,ts,less,json}": [
       "prettier --write",
       "eslint"
     ]

@@ -7,7 +7,7 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
+    files: ['src/**/*.{js,jsx,mjs,cjs,ts,tsx}'],
     plugins: {
       react
     },
