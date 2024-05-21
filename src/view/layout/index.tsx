@@ -9,8 +9,9 @@ const LayoutDom = () => {
     <>
       <Layout className="w-full h-full">
         <Sider
-          width={"15rem"}
+          width={"10rem"}
           collapsible={true}
+          trigger={null}
           collapsed={collapsed}
           className="h-full"
           theme="light"
