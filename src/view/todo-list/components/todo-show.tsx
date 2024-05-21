@@ -6,6 +6,9 @@ const TodoShow = (props: {
   todoItemStatusChangeHandler: (e: CheckboxChangeEvent, id: number) => void
   delTodoItemHandler: (id: number) => void
 }) => {
+  const a = 1
+  console.log(a)
+
   const { showTodoList, todoItemStatusChangeHandler, delTodoItemHandler } = props
   return (
     <>
