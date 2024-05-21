@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom'
 import AppRouter from './routes'
 function AppRouterComp() {
   return (
@@ -8,4 +8,4 @@ function AppRouterComp() {
   )
 }
 
-export default AppRouterComp;
+export default AppRouterComp

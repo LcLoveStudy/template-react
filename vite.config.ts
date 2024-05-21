@@ -1,7 +1,7 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import tailwindcss from "tailwindcss";
-import autoprefixer from "autoprefixer";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import tailwindcss from 'tailwindcss'
+import autoprefixer from 'autoprefixer'
 // https://vitejs.dev/config/
 export default defineConfig({
   esbuild: {
@@ -12,8 +12,8 @@ export default defineConfig({
   plugins: [react()],
   css: {
     postcss: {
-      plugins: [tailwindcss, autoprefixer],
-    },
+      plugins: [tailwindcss, autoprefixer]
+    }
   },
   server: {
     // 开启局域网
@@ -21,4 +21,4 @@ export default defineConfig({
     port: 1024,
     open: true
   }
-});
+})

@@ -1,28 +1,26 @@
-import { useState } from "react";
-import { TodoHeader, TodoShow } from "./components";
-import { Card } from "antd";
-import { CheckboxChangeEvent } from "antd/es/checkbox";
+import { useState } from 'react'
+import { TodoHeader, TodoShow } from './components'
+import { Card } from 'antd'
+import { CheckboxChangeEvent } from 'antd/es/checkbox'
 function TodoList() {
   // 输入框值
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('')
   // 待办列表
-  const [todoList, setTodoList] = useState<
-    { id: number; content: string; status: boolean }[]
-  >([]);
+  const [todoList, setTodoList] = useState<{ id: number; content: string; status: boolean }[]>([])
   //展示用的列表
   const [showTodoList, setShowTodoList] = useState<
     { id: number; content: string; status: boolean }[]
-  >([]);
+  >([])
 
   /** 输入框改变时 */
   const searchValueChangeHandler = (value: string) => {
-    setSearchValue(value);
+    setSearchValue(value)
     setShowTodoList(
       todoList.filter((todoItem) => {
-        return todoItem.content.includes(value);
+        return todoItem.content.includes(value)
       })
-    );
-  };
+    )
+  }
 
   /** 添加待办事项 */
   const addTodoHandler = () => {
@@ -31,13 +29,13 @@ function TodoList() {
       {
         id: Math.random(),
         content: searchValue,
-        status: false,
-      },
-    ];
-    setTodoList(newTodoList);
-    setShowTodoList(newTodoList);
-    setSearchValue("");
-  };
+        status: false
+      }
+    ]
+    setTodoList(newTodoList)
+    setShowTodoList(newTodoList)
+    setSearchValue('')
+  }
   /** 复选框 */
   const todoItemStatusChangeHandler = (e: CheckboxChangeEvent, id: number) => {
     setTodoList(
@@ -45,20 +43,20 @@ function TodoList() {
         if (todoItem.id === id) {
           return {
             ...todoItem,
-            status: e.target.checked,
-          };
+            status: e.target.checked
+          }
         } else {
-          return todoItem;
+          return todoItem
         }
       })
-    );
-  };
+    )
+  }
 
   /** 删除todo */
   const delTodoItemHandler = (id: number) => {
-    setTodoList(todoList.filter((todo) => todo.id !== id));
-    setShowTodoList(showTodoList.filter((todo) => todo.id !== id));
-  };
+    setTodoList(todoList.filter((todo) => todo.id !== id))
+    setShowTodoList(showTodoList.filter((todo) => todo.id !== id))
+  }
 
   return (
     <>
@@ -83,7 +81,7 @@ function TodoList() {
         </div>
       </Card>
     </>
-  );
+  )
 }
 
-export default TodoList;
+export default TodoList

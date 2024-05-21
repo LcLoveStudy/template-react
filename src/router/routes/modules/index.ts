@@ -1,21 +1,21 @@
-import { MenuItemType } from "../../../types/menu";
+import { MenuItemType } from '../../../types/menu'
 
 // import.meta.glob() 直接引入所有的模块 Vite 独有的功能
-const modules = import.meta.glob("./**/index.tsx", { eager: true });
+const modules = import.meta.glob('./**/index.tsx', { eager: true })
 /** routes为所有菜单栏内的所有路由 */
-export const menu: MenuItemType[] = [];
-export const AppRoutes: { path: string; element: JSX.Element }[] = [];
+export const menu: MenuItemType[] = []
+export const AppRoutes: { path: string; element: JSX.Element }[] = []
 // 加入到路由集合中
 Object.keys(modules).forEach((key) => {
-  const mod = (modules as any)[key].default || {};
-  const modList = Array.isArray(mod) ? [...mod] : [mod];
-  const routeItem = modList[0];
+  const mod = (modules as any)[key].default || {}
+  const modList = Array.isArray(mod) ? [...mod] : [mod]
+  const routeItem = modList[0]
   if (routeItem.order) {
     menu[routeItem.order - 1] = {
       name: routeItem.name,
       path: routeItem.path,
-      icon: routeItem?.icon,
-    };
+      icon: routeItem?.icon
+    }
   }
-  AppRoutes.push(routeItem);
-});
+  AppRoutes.push(routeItem)
+})

@@ -1,17 +1,17 @@
-import { Button, Card, Form, FormProps, Input } from "antd";
-import { useNavigate } from "react-router-dom";
+import { Button, Card, Form, FormProps, Input } from 'antd'
+import { useNavigate } from 'react-router-dom'
 const LoginComp = () => {
   type FieldType = {
-    username: string;
-    password: string;
-  };
+    username: string
+    password: string
+  }
   const navigate = useNavigate()
-  const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
+  const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
     console.log(values)
-    navigate('/',{
-        replace:true
+    navigate('/', {
+      replace: true
     })
-  };
+  }
   return (
     <div className="h-full flex items-center justify-center">
       <Card title="登录" bordered={false}>
@@ -25,7 +25,7 @@ const LoginComp = () => {
           <Form.Item<FieldType>
             label="用户名"
             name="username"
-            rules={[{ required: true, message: "请输入用户名!" }]}
+            rules={[{ required: true, message: '请输入用户名!' }]}
           >
             <Input />
           </Form.Item>
@@ -33,7 +33,7 @@ const LoginComp = () => {
           <Form.Item<FieldType>
             label="密码"
             name="password"
-            rules={[{ required: true, message: "请输入密码!" }]}
+            rules={[{ required: true, message: '请输入密码!' }]}
           >
             <Input.Password />
           </Form.Item>
@@ -45,7 +45,7 @@ const LoginComp = () => {
         </Form>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default LoginComp;
+export default LoginComp
