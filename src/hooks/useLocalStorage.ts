@@ -18,9 +18,7 @@ export const uesLocalStorage = <T>(key: string, initialValue?: T) => {
   const setStorageValue = (value: T) => {
     return new Promise((resolve) => {
       setValue(value)
-      setTimeout(() => {
-        resolve(1)
-      }, 0)
+      resolve(1)
     })
   }
   useEffect(() => {
