@@ -1,13 +1,15 @@
 import { Button, Card, Form, FormProps, Input } from 'antd'
+import { uesLocalStorage } from '../../hooks'
 import { useNavigate } from 'react-router-dom'
 const LoginComp = () => {
   type FieldType = {
     username: string
     password: string
   }
+  let { setStorageValue } = uesLocalStorage<FieldType>('react-userinfo')
   const navigate = useNavigate()
-  const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
-    console.log(values)
+  const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
+    await setStorageValue(values)
     navigate('/', {
       replace: true
     })

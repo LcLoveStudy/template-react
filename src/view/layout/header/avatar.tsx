@@ -1,6 +1,8 @@
 import { Avatar, Dropdown, MenuProps, message } from 'antd'
 import { useNavigate } from 'react-router-dom'
+import { uesLocalStorage } from '../../../hooks'
 const AvatarComp = () => {
+  const { setStorageValue } = uesLocalStorage('react-userinfo')
   const navigate = useNavigate()
   const MenuItems: MenuProps['items'] = [
     {
@@ -9,8 +11,9 @@ const AvatarComp = () => {
     }
   ]
   /** 点击菜单项 */
-  const MenuItemClickHandler: MenuProps['onClick'] = ({ key }) => {
+  const MenuItemClickHandler: MenuProps['onClick'] = async ({ key }) => {
     if (key === '1') {
+      await setStorageValue(null)
       //退出登录
       navigate('/login', {
         replace: true
