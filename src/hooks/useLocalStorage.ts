@@ -9,17 +9,18 @@ import { useEffect, useState } from 'react'
  */
 export const uesLocalStorage = <T>(key: string, initialValue?: T) => {
   const [storageValue, setValue] = useState(() => {
-    try {
-      const item = localStorage.getItem(key)
-      return item ? JSON.parse(item) : initialValue
-    } catch (error) {
-      return initialValue ? initialValue : ''
+    const item = localStorage.getItem(key)
+    if (item) {
+      return JSON.parse(item)
     }
+    return initialValue ? initialValue : null
   })
   const setStorageValue = (value: T) => {
     return new Promise((resolve) => {
       setValue(value)
-      resolve(1)
+      setTimeout(() => {
+        resolve(1)
+      }, 0)
     })
   }
   useEffect(() => {
