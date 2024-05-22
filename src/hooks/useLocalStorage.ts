@@ -10,14 +10,20 @@ import { useEffect, useState } from 'react'
  *    - storageValue: 当前存储在 localStorage 中的值。
  *    - setStorageValue: 用于异步更新 localStorage 值的函数。
  */
-export const uesLocalStorage = <T>(key: string, initialValue?: T) => {
+export const uesLocalStorage = <T>(
+  key: string,
+  initialValue?: T
+): {
+  storageValue: T | null
+  setStorageValue: (value: T) => Promise<void>
+} => {
   const [storageValue, setValue] = useState(() => {
     const item = localStorage.getItem(key)
     return item ? JSON.parse(item) : initialValue ?? null
   })
   const setStorageValue = (value: T) => {
     setValue(value)
-    return Promise.resolve(1)
+    return Promise.resolve()
   }
   useEffect(() => {
     if (storageValue) {
