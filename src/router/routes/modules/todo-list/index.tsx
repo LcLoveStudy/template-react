@@ -1,5 +1,5 @@
 import TodoList from '@/view/todo-list'
-const TodoModule = {
+const TodoModule: MenuItemType = {
   path: 'todo-list',
   name: '代办事项',
   order: 2,

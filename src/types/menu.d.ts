@@ -4,5 +4,6 @@ declare type MenuItemType = {
   path: string //菜单项的路径
   icon?: string //菜单项的图标
   hidden?: boolean //是否在菜单中隐藏
+  element: JSX.Element
   children?: MenuItemType[] //菜单项的子菜单
 }
