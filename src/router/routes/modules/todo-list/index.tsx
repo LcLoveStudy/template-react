@@ -1,4 +1,4 @@
-import TodoList from '../../../../view/todo-list'
+import TodoList from '@/view/todo-list'
 const TodoModule = {
   path: 'todo-list',
   name: '代办事项',

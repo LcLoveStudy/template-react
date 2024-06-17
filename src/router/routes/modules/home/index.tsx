@@ -1,4 +1,4 @@
-import HomeDom from '../../../../view/home'
+import HomeDom from '@/view/home'
 const HomeModule = {
   order: 1,
   name: '首页',

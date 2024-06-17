@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import tailwindcss from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
+import { fileURLToPath, URL } from 'node:url'
 // https://vitejs.dev/config/
 export default defineConfig({
   esbuild: {
@@ -10,6 +11,11 @@ export default defineConfig({
   },
   base: process.env.NODE_ENV === 'production' ? './' : '/',
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  },
   css: {
     postcss: {
       plugins: [tailwindcss, autoprefixer]

@@ -1,5 +1,5 @@
 import { Button, Card, Form, FormProps, Input } from 'antd'
-import { uesLocalStorage } from '../../hooks'
+import { uesLocalStorage } from '@/hooks'
 import { useNavigate } from 'react-router-dom'
 const LoginComp = () => {
   type FieldType = {

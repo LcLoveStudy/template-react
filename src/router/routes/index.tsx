@@ -1,6 +1,6 @@
 import { useRoutes } from 'react-router-dom'
-import LayoutDom from '../../view/layout'
-import LoginComp from '../../view/login'
+import LayoutDom from '@/view/layout'
+import LoginComp from '@/view/login'
 import { AppRoutes } from './modules'
 const routes = [
   {
