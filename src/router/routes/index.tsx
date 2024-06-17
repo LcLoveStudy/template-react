@@ -25,17 +25,14 @@ const PageTitle = (route: { element: JSX.Element; name: string }) => {
 }
 const routesCreater = (targetRoutes: MenuItemType[] = routes): MenuItemType[] => {
   return targetRoutes.map((item) => {
-    if (item.children) {
-      return {
-        ...item,
-        element: <PageTitle element={item.element} name={item.name}></PageTitle>,
-        children: routesCreater(item.children)
-      }
-    } else {
-      return {
-        ...item,
-        element: <PageTitle element={item.element} name={item.name}></PageTitle>
-      }
+    let route = {
+      ...item,
+      element: <PageTitle element={item.element} name={item.name}></PageTitle>
+    }
+    if (!item.children) return route
+    return {
+      ...route,
+      children: routesCreater(item.children)
     }
   })
 }
