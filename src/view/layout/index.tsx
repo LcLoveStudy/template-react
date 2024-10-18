@@ -2,32 +2,30 @@ import { Outlet } from 'react-router-dom'
 import { Layout } from 'antd'
 import { useState } from 'react'
 import HeaderComp from './header'
+import SiderComp from './sider'
 const LayoutDom = () => {
   const { Header, Sider, Content } = Layout
   const [collapsed, setCollapsed] = useState(false)
   return (
-    <>
-      <Layout className="w-full h-full">
+    <Layout className="w-full h-full">
+      <Header className="bg-white border-0 border-b-[1px] border-solid border-slate-200">
+        <HeaderComp collapsed={collapsed} collapseChange={() => setCollapsed(!collapsed)} />
+      </Header>
+      <Layout>
         <Sider
-          width={'10rem'}
           collapsible={true}
           trigger={null}
           collapsed={collapsed}
-          className="h-full"
+          className={`h-full ${!collapsed ? 'w-[10vw]' : 'w-16'}`}
           theme="light"
         >
-          <div>侧边</div>
+          <SiderComp />
         </Sider>
-        <Layout>
-          <Header className="bg-white">
-            <HeaderComp collapsed={collapsed} collapseChange={() => setCollapsed(!collapsed)} />
-          </Header>
-          <Content>
-            <Outlet />
-          </Content>
-        </Layout>
+        <Content className="lg:p-4">
+          <Outlet />
+        </Content>
       </Layout>
-    </>
+    </Layout>
   )
 }
 

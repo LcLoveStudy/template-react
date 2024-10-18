@@ -3,7 +3,7 @@ import LayoutDom from '@/view/layout'
 import LoginComp from '@/view/login'
 import { AppRoutes } from './modules'
 
-const routes: MenuItemType[] = [
+export const routes: MenuItemType[] = [
   {
     path: '/login',
     name: '登录',
