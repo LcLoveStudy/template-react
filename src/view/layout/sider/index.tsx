@@ -33,9 +33,7 @@ const SiderComp = () => {
 
   //真实菜单
   const items = menuList.children?.map(createItems)
-  return (
-    <Menu defaultSelectedKeys={[currentPath]} items={items} onClick={({ key }) => navigate(key)} />
-  )
+  return <Menu selectedKeys={[currentPath]} items={items} onClick={({ key }) => navigate(key)} />
 }
 
 export default SiderComp
