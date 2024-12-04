@@ -16,5 +16,5 @@ Object.keys(modules).forEach((key) => {
       element: routeItem.element
     }
   }
-  AppRoutes.push(routeItem)
 })
+AppRoutes.push(...menu)
